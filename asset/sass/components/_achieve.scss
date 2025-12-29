@@ -1,0 +1,312 @@
+@charset "UTF-8";
+
+@use "../core/variables";
+@use "../core/mixins/mixin";
+@use "../core/mixins/viewportscale" as *;
+@use "../core/mediaQuery" as *;
+
+
+
+.caresend {
+    
+    @include vs(padding-top, 375px, 40px, 1536px, 80px, 'vw');
+}
+
+.caresend-achieve__heading {
+    
+    @include mixin.heading-caresend; 
+    line-height: 1.0;
+    @include max(md) {
+        @include vs(font-size, 375px, 20px, 678px, 32px, 'vw');
+    }
+}
+
+.caresend-achieve__pic-wrapper {
+    @include vs(padding-top, 375px, 30px, 1536px, 40px, 'vw');
+    // 上のマージン40～３０
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
+    @include max(md) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+.caresend-achieve__pic {
+    width: 428px;
+    height: auto;
+    // padding-right: 42px;
+    @include max(lg) {
+        width: 280px;
+        height: 95px;
+    }
+}
+.caresend-achieve__pic:nth-of-type(1) {
+    margin-right: 84px;
+    @include max(lg) {
+        margin-right: 42px;
+    }
+    @include max(md) {
+        margin-right: 0px; 
+    }
+}
+.js-fade{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    transition: opacity 1s,visibility 1s, transform 1s;
+}
+.scroll {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+
+
+
+
+// slider--------------------------------------------------------
+#slider01 .tswiper {
+    padding-bottom: 46px;
+    
+    @include vs(padding-top, 375px, 50px, 1536px, 64px, 'vw');
+    @include max(lg) {
+        width:1040px;
+        height: 64px;
+    }
+    
+}
+#slider01 .swiper-wrapper {
+    transition-timing-function: linear;
+}
+#slider01 .swiper-slide {
+    display: flex;
+    
+}
+.caresend-achieve__slider-pic {
+    flex: 1;
+    padding-right: 40px;
+    padding-left: 40px;
+    @include max(lg) {
+        padding-left: 30px;
+     padding-right: 30px;
+    }
+}
+
+
+
+
+.container--caresend {
+    // @include vs(padding-top, 375px, 72px, 1536px, 96px, 'vw');
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-left: variables.$base-spacing;
+    padding-right: variables.$base-spacing;
+    @include max(exsm) {
+    padding-left: variables.$base-spacing--small;
+    padding-right: variables.$base-spacing--small;
+    }
+}
+.caresend-about__heading {
+    @include vs(padding-top, 375px, 85px, 1536px, 48px, 'vw');
+
+    @include vs(font-size, 375px, 24px, 1536px, 32px, 'vw');
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    color: variables.$primary-color--black;
+    
+
+}
+.caresend-about__copy-wrapper {
+    padding-top: 51px;
+    @include max(md) {
+        @include vs(padding-top, 375px, 63px, 678px, 51px, 'vw');
+    }
+   @include vs(padding-bottom, 375px, 25px, 1536px, 45px, 'vw');
+}
+.caresend-about__copy {
+    @include vs(font-size, 375px, 20px, 1536px, 24px, 'vw');
+    font-weight: 700;
+    line-height: 1.8;
+    text-align: center;
+    color: variables.$primary-color--black;
+    @include max(exsm) {
+        font-size: 20px;
+    }
+  
+}
+.sp-br {
+    display: none;
+    @include max(sm) {
+        display: block;
+    }
+}
+
+.caresend-about__copy--small {
+    font-size: 23px;
+    @include max(exsm) {
+        font-size: 20px;
+    }
+}
+.caresend-about__copy--big {
+  
+    font-weight: 700;
+    text-align: center;
+    color: variables.$primary-color--blue;
+   
+        @include vs(font-size, 375px, 24px, 1536px, 32px, 'vw');
+
+}
+.caresend-about__pic {
+    
+    display: block;
+    text-align: center;
+    background: #F9F9F9;
+    // max-width: 800px;
+    height: auto;
+    margin: 0 auto;
+}
+.caresend-about__pic img {
+    margin-top: -20px;
+    @include max (exsm) {
+        margin-top: 30px;
+    }
+
+}
+.caresend-feaure__heading {
+    @include vs(padding-top, 375px, 72px, 1536px, 96px, 'vw');
+    @include mixin.heading-caresend;
+}
+.caresend-feature-grid {
+    padding-top: 59px;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2,1fr); 
+  
+    @include max(md) {
+        place-content: center;
+
+        grid-template-columns: repeat(1,0.5fr); 
+    }
+    @include max(sm) {
+        grid-template-columns: repeat(1,1.0fr); 
+      
+
+    }
+}
+.caresend-feature-grid__item {
+    display: block;
+    border: 1px solid #007FC6;
+    // border-radius: 5px;
+    color: inherit;
+    text-decoration: none;
+    transition: color .3s;
+    text-align: center;
+    height: 325px;
+    margin-inline: auto;
+    @include max(md){
+        width:341px;
+        height: 100%;
+    }
+}
+.caresend-feature-grid__item .tb-br {
+    display: none;
+}
+@include max(md) {
+ 
+    .caresend-feature-grid__item .tb-br {
+        display: block;
+    }
+}
+
+.caresend-feature-grid__img {
+    padding-top: 14px;
+   
+}
+.caresend-feature-grid__title {
+    padding-top: 19px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #F47500;
+}
+.caresend-feature-grid__sentense {
+    color: #333;
+    padding-top: 18px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    padding-right: 32px;
+    padding-left: 32px;
+    padding-bottom: 23px;
+    @media (min-width:768px) and (max-width:860px) {
+        padding-top: 5px;
+    }
+    text-align: left;
+}
+
+
+
+.caresend-download {
+    margin-top: 31px;
+    text-align: center;
+    background-image: url("../img/background-4876988_1280_pc.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include max(lg) {
+        background-position: 40% 50%;
+    }
+    @include max(exsm) {
+        background-image: url("../img/background-4876988_1280.jpg");
+    }
+
+}
+.caresend-download__copy {
+    padding-top: 60px;
+    @include max (exsm) {
+        padding-top: 45px;
+    }
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.8;
+    color: #ffff;
+    text-align: center;
+    .caresend-download__copy .sp-br{
+        display: none;
+        @include max(exsm) {
+            display: block;
+        }
+    }
+    // margin-bottom: 24px;
+}
+
+.caresend-downroad__btn-wrapper {
+    margin-top: 34px;
+    padding-bottom: 51px;
+    @include max(exsm) {
+        padding-bottom: 41px;
+    }
+}
+// .btn{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+// }
+.rounded-btn {
+    @include mixin.rounded-btn; 
+    padding: 16px 50px; 
+    font-size: 20px;
+}
+.rounded-btn--white {
+    background: #ffff;
+    color: #007FC6;
+    @include max (exsm) {
+        padding: 16px 50px; 
+    }
+}

@@ -1,0 +1,116 @@
+@charset 'UTF-8';
+
+@use "../core/variables";
+@use "../core/mixins/mixin";
+@use "../core/mixins/viewportscale" as *;
+@use "../core/mediaQuery" as *;
+
+.caresend-downroad {
+    @include vs(padding-top, 375px, 72px, 1536px, 96px, 'vw');
+    background: linear-gradient(287.03deg, #02D1FF 0%, #007FC6 100%);
+    padding-bottom: 57px;
+    padding-left: variables.$base-spacing;
+    padding-right: variables.$base-spacing;
+    @include max(exsm) {
+        padding-left: variables.$base-spacing--small;
+        padding-right: variables.$base-spacing--small;
+
+    }
+
+}
+.caresend-downroad__title {
+    @include vs(font-size, 375px, 24px, 1536px, 32px, 'vw');
+    // font-size: 32px;
+    font-weight: 700;
+    line-height: 1.0;
+    text-align: center;
+    color: #fff;
+}
+.caresend-downroad__title .tb-br {
+    display: none;
+    @include max(sm) {
+        display:block;
+    }
+}
+
+
+
+
+
+.caresend-downroad__left {
+    margin-right: 35px;
+    @media screen and (max-width: 830px) {
+        margin-right: 16px;
+    }
+    @include max(sm) {
+        margin-right: 0;
+    }
+}
+.caresend-downroad__sentense {
+    font-size: 16px;
+    @media screen and (max-width: 830px) {
+        @include vs(font-size, 375px, 12px, 830px, 14px, 'vw');
+    }
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: left;
+    @include max(sm) {
+        text-align: center;
+    }
+    @include max(md) {
+        text-align: center;
+    }
+    color: #fff;
+}
+.caresend-downroad__pic {
+    @include vs(padding-top, 375px, 16px, 1536px, 48px, 'vw');
+   
+
+    // padding-top:48px;
+    @media screen and (max-width: 830px) {
+        @include max(md) {
+            @include vs(width, 375px, 240px, 830px, 320px, 'vw');
+            margin: 0 auto;
+            padding-bottom: 44px;
+        }
+    }
+}
+.caresend-downroad__caresend-form.caresend-form {
+    @include max(md) {
+        margin-top: 40px;
+    }
+}
+
+.caresend-downroad__inner {
+    @include vs(padding-top, 375px, 26px, 1536px, 79px, 'vw');
+
+    display: flex;
+    justify-content: center;
+    @include max(md) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+// フッター
+.caresend-footer-wrapper {
+    margin-top: 26px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+// .caresend-footer__pic {
+//     text-align: center;
+// }
+.caresend-footer__small {
+    margin-top: 37px;
+    display: inline-block;
+    font-family: Goldman;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.0;
+    // text-align: ;
+
+}

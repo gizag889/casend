@@ -1,0 +1,18 @@
+@use "../core/variables";
+@use "../core/mediaQuery" as *;
+
+main {
+    overflow: hidden;
+}
+
+// container
+.container {
+    max-width: variables.$container-width;
+    @include max(md) {
+        max-width: 100%;
+      
+    }
+    box-sizing: content-box;
+    padding-right: variables.$base-spacing;
+    padding-left: variables.$base-spacing;
+}

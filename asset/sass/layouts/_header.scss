@@ -1,0 +1,244 @@
+@charset "UTF-8";
+
+@use "../core/variables";
+@use "../core/mediaQuery" as *;
+@use "../core/mixins/viewportscale" as *;
+
+html {
+    scroll-behavior: smooth;
+}
+.header {
+    display: block;
+    // padding: variables.$base-spacing;
+    overflow: hidden;
+    // height: 96px;
+    z-index: 50;
+    background: #fff;
+
+    position: sticky;
+    top: 0;
+    height: 96px;
+    // padding-bottom: -5px;
+    
+    @media screen and (max-width:1200px) {
+        height: 64px;
+        display: flex;
+        align-items: center;
+        
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        
+        
+    }
+    &__logo {
+        padding:27px 22px 27px;
+        @include max(md) {
+            padding: 8px;
+        }
+        @include max(sm) {
+            width: 139px;
+        }
+        @include max(exsm){
+            padding-left: 0;
+            margin-left: 20px;
+        }
+        &__logo img {
+            width: 139px;
+        }
+    }
+    
+    .header-nav {
+        margin-left: -55px;
+        display: flex;
+        // @include vs(margin-left, 930px, 50px, 1536px, 240px, 'vw');
+        align-items: center;
+        margin-inline: center;
+        @media screen and (max-width:1200px)  {
+            display: none;
+        }
+      
+        
+        &__item {
+            // @include vs(padding-right, 922px, 12px, 1030px, 28px, 'vw');
+            text-align: center;
+        }
+     
+        &__link{
+            display: inline-block;
+            // padding-right: 14px;
+            padding-right: 28px;
+            margin-bottom: 4px;
+            color: variables.$primary-color--blue;
+            @include vs(font-size, 1040px, 13px, 922px, 16px, 'vw');
+
+        }
+        // &__link
+      
+        
+    }
+
+    .header-request {
+        display: block;
+
+        width: 189px;
+        // height: 96px;
+        background: variables.$primary-color--blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media screen and (max-width:1200px){
+
+            width: 100px;
+        }
+        @media screen and (max-width:1200px){
+            position: absolute;
+            top: 0;
+            right: 0;
+           right: 64px;
+           height: 64px;
+           width: 64px;
+           font-size: 10px;
+           font-weight: 400;
+         
+        }
+      
+        &__inner{
+            display: flex;
+            align-items: center;
+            color: variables.$primary-color--white;
+          @media screen and (max-width:1200px) {
+                flex-direction: column;
+            }
+        }        
+        &__inner::before {
+            margin-right: 7px;
+            content: url(../img/mail.svg);
+
+            @media screen and (max-width:1200px) {
+                margin-right: 0;
+            }
+            @include max(sm) {
+                content: '';
+                background-image: url(../img/mail.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                vertical-align: middle;
+                margin-bottom: 4px;
+            }
+        }
+    }
+}
+
+.burger {
+    display: none;
+    @media screen and (max-width:1200px){
+        display: flex;
+    }
+    position: absolute;
+    // position: relative;
+    top: 0;
+    right: 0;
+    height: 64px;
+    width: 64px;
+    background: #333333;
+    cursor: pointer;
+}
+.burger::after {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    left: 0;
+    margin-inline: auto;
+    content: "メニュー";
+    display: block;
+    font-size: 10px;
+    color: #fff;
+    font-weight: 400;
+
+    text-align: center;
+}
+.burger span {
+    display: inline-block;
+    transition: all .4s;/*アニメーションの設定*/
+    position: absolute;
+
+    left: 14px;
+    margin: auto 0;
+    height: 1px;
+  background: #fff;
+    width: 50%;
+}
+.burger span:nth-of-type(1) {
+    top: 14px;
+}
+.burger span:nth-of-type(2) {
+    top: 23px;
+}
+.burger span:nth-of-type(3) {
+    top: 32px;
+}
+.burger.active span:nth-of-type(1) {
+    top: 18px;
+    left: 15px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 50%;
+}
+
+.burger.active span:nth-of-type(2) {
+  opacity: 0;/*真ん中の線は透過*/
+}
+
+.burger.active span:nth-of-type(3){
+    top: 30px;
+    left: 15px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 50%;
+}
+.burger-menu {
+    display: none;
+    margin-top: 64px;
+    width: 100vw;
+    height: 100vh;
+    background: #007FC6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.burger-menu.active {
+    display: flex;
+}
+.burger-menu__items {
+    width: 100%;
+}
+.burger-menu__item {
+
+    border-bottom: 1px solid #FFFFFF;
+}
+.burger-menu__letter {
+    padding: 24px 16px;
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.0;
+    text-align: left;
+  
+}
+.burger-menu__letter--icon::before {
+    content: '';
+    background-image: url(../img/mail.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 12px;
+}

@@ -1,0 +1,413 @@
+@charset "UTF-8";
+
+@use "../core/variables";
+@use "../core/mixins/mixin";
+@use "../core/mixins/viewportscale" as *;
+@use "../core/mediaQuery" as *;
+
+
+.caresend-case {
+    scroll-margin-top: 30px;
+
+}
+.caresend-case__title {
+    @include vs(padding-top, 375px, 75px, 1536px, 102px, 'vw');
+    @include mixin.heading-caresend; 
+    @include vs(padding-bottom, 375px, 52px, 1536px, 75px, 'vw'); 
+}
+#slider02 .swiper {
+    width: 988px;
+    height: 550px !important;
+    padding: 0 54px;
+     @include max(lg) {
+        padding: 0 50px;
+        width: 580px;
+    }
+    @include max(sm) {
+        width: 380px;
+        margin-inline: auto;
+        padding: 0 35px;
+    }
+    @include max(exsm) {
+        margin-right: 1px;
+        width: 365px;
+        padding: 0 30px 0 25px;
+    }
+   
+ }
+ #slider02 .swiper-wrapper {
+    width: 100%;
+   
+}
+// .swiper-slide.swiper-slide-active {
+//     margin: 0;
+// }
+#slider02 .swiper-slide {
+    height: 488px;
+    margin-top: 5px;
+    @include max(exsm) {
+        height: 471px;
+    }
+    color: #333;
+    box-shadow: 0px 5px 8px 3px #33333340;
+     border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 33px 20px 1em;
+    @include max(lg) {
+        padding: 27px 10px 0px;
+    }
+    position: relative;
+    @include max(exsm) {
+        padding: 40px 10px 0px;
+      
+
+    }
+}
+// .caresend-case__item {
+//     max-width: 405px;
+//  }
+.caresend-case__copy {
+    text-align: left;
+    @include vs(font-size, 375px, 18px, 1200px, 24px, 'vw');
+    font-weight: 700;
+    line-height: 1.8;
+    @include max(exsm) {
+        line-height: 1.7;
+    }
+    color: #333;
+}
+.caresend-case__copy span {
+    color: variables.$primary-color--blue;
+}
+.caresend-case__sentense {
+    text-align: left;
+    padding-top: 24px;
+    @include vs(font-size, 375px, 12px, 992px, 14px, 'vw');
+    font-weight: 400;
+    line-height: 1.8;
+    color: #333;
+}
+.caresend-case__copy-pic img{
+   position: absolute;
+   margin-top: 20px;
+   @include max(exsm) {
+    margin-top: 40px;
+   }
+   bottom: 20px;
+}
+
+.swiper-button-prev,
+.swiper-button-next{
+    position: absolute;
+    top: 235px;
+    
+//   bottom: 0;
+  content: "";
+  height: 34px;
+  margin: auto;
+//   position: absolute;
+  
+  width: 34px;
+  border-radius: 50%;
+  background: #007FC6;
+  color: transparent;
+  @include max(sm) {
+    width: 20px;
+    height: 20px;
+  }
+}
+.swiper-button-prev {
+    left: 0;
+}
+.swiper-button-next {
+    right:2px;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    
+	width: 13px;
+	height: 13px;
+	border-top: 4px solid #fff;
+	border-right: 4px solid #fff;
+	@include max(sm) {
+        width: 8px;
+        height: 8px;
+        border-top: 3px solid #fff;
+        border-right: 3px solid #fff;
+      }
+} 
+.swiper-button-prev::after {
+    -webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg); 
+    translate: (3px 0);
+}
+.swiper-button-next::after {
+    -webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+    translate: (-3px 0);
+}
+
+
+// .caresend-fee {
+//     // @include vs(padding-top, 375px, 45px, 1536px, 55px, 'vw');
+  
+// }
+.container--caresend--bg-color-gray{
+    background: #F9F9F9;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
+}
+.caresend-fee__title {
+    @include vs(padding-top, 375px, 50px, 1536px, 96px, 'vw');
+    @include vs(font-size, 375px, 24px, 1536px, 32px, 'vw');
+    text-align: center;
+    line-height: 1.0;
+    padding-bottom: 69px;
+    @include max(exsm) {
+        padding-bottom: 35px;
+    }
+    color: #333;
+}
+.caresend-fee__cards {
+    margin-inline: auto;
+    max-width: 920px;
+    display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(91px, 1fr));
+    gap: 6px;
+   
+    @include max(lg) {
+        max-width: 800px;
+    }
+    @include max(md)  {
+        max-width: 700px;
+    }
+    @include max(exsm){
+        max-width: 312px;
+    }
+}
+.caresend-fee__card {
+    margin-inline: auto;
+    width: 100%;
+    border-radius: 5px;
+    // width: 296px;
+    // height: 277px;
+    // // @include vs(width, 375px, 91px, 1536px, 296px, 'vw');
+    // @include max(exlg) {
+    //     width: 260px
+    // }
+    // @include max(lg) {
+    //     width: 260px;
+    // }
+    // @include max(md) {
+    //     width: 180px;
+    // }
+    // @include max(sm) {
+    //     width: 130px;
+    // }
+    @media screen and (max-width:410px){
+        width: 91px;
+    }
+    @include vs(height, 375px, 91px, 1536px, 277px, 'vw');
+
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px #33333340;
+}
+.caresend-fee__topline {
+    height: 12px;
+    @include max(sm) {
+        height: 6px;
+    }
+    width: 100%;
+    background-color: variables.$primary-color--blue;
+    border-radius: 5px 5px 0 0;
+}
+.caresend-fee__name {
+    @include vs(font-size, 375px, 12px, 1536px, 24px, 'vw');
+    @include vs(padding-top, 375px, 8px, 1536px, 42px, 'vw');
+    color: #333333;
+   
+    font-weight: 700;
+    line-height: 1.0;
+    text-align: center;
+}
+.caresend-fee__amount {
+    @include vs(padding-top, 375px, 12px, 1536px, 23px, 'vw');
+    @include vs(font-size, 375px, 36px, 1536px, 96px, 'vw');
+    @include vs(padding-bottom, 375px, 17px, 1536px, 90px, 'vw');
+   color: variables.$primary-color--blue;
+    font-weight: 700;
+    line-height: 1.0;
+    text-align: center;
+}
+.caresend-fee__amount span {
+    font-weight: 700;
+    font-size: 32px;
+    @include vs(font-size, 375px, 12px, 1536px, 32px, 'vw');
+   color: #333;
+}
+.caresend-fee__caution {
+    color: #333;
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: left;
+    font-size: 14px;
+    padding: 48px 12px 0;
+    @include max(md) {
+        font-size: 12px;
+    }
+    // @include vs(font-size, 375px, 12px, 1536px, 14px, 'vw');
+
+}
+
+.caresend-question {
+    @include vs(padding-top, 375px, 89px, 1536px, 153px, 'vw');
+    padding-bottom: 72px;
+
+
+
+}
+.caresend-question__title {
+    @include mixin.heading-caresend;
+    @include vs(font-size, 375px, 24px, 1536px, 32px, 'vw');
+    line-height: 1.0;
+}
+
+.caresend-accordion {
+    @include vs(padding-top, 375px, 48px, 1536px, 70px, 'vw');
+   
+}
+.caresend-accordion__contents {
+    @include vs(margin-top, 375px, 16px, 1536px, 24px, 'vw');
+    margin-right: -20px;
+    @include max(md) {
+        margin-right: 0;
+    }
+
+}
+.caresend-accordion__contents:first-child {
+    margin-top: 0px;
+}
+.caresend-accordion__question span {
+    font-family: "Goldman";
+    font-weight: 400;
+    line-height: 1.0;
+    @include vs(font-size, 375px, 16px, 1536px, 32px, 'vw');
+    display: inline-block;
+    color: #fff;
+    background: #007FC6;
+    padding: 6px 9px;
+    margin: 17px 24px 19px 0;
+    @include max(md){
+        padding: 8px 9px;
+        margin: 16px 10px 16px 0;
+    }
+    border-radius: 50%;
+    
+}
+.caresend-accordion__question {
+    // @include vs(padding-right, 375px, 10px, 1536px, 36px, 'vw');
+    @include vs(padding-left, 375px, 10px, 1536px, 24px, 'vw');
+    @include vs(font-size, 375px, 14px, 1536px, 16px, 'vw');
+
+    display: flex;
+    align-items: center;
+    color: #333333;
+    background: #fff;
+    border-radius: 10px 10px 10px 10px;
+    font-weight: 700;
+    
+    position: relative;
+    cursor: pointer;
+
+    // 十字
+    &:before {
+        position: absolute;
+        content: "";
+        display: block;
+        // width: 32px;
+        // @include vs(width, 375px, 32px, 1536px, 44px, 'vw');
+        @include vs(width, 375px, 16px, 1536px, 32px, 'vw');
+
+        // 十字の線の太さ
+        height: 2px;
+        background-color: #333333;
+        right: 24px;
+        @include max(exsm) {
+            right: 10px;
+        }
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+    &:after {
+        position: absolute;
+        content: "";
+        display: block;
+        // @include vs(width, 375px, 32px, 1536px, 44px, 'vw');
+        @include vs(width, 375px, 16px, 1536px, 32px, 'vw');
+
+        height: 2px;
+        background-color: #333333;
+        right:24px;
+        @include max(exsm) {
+            right: 10px;
+        }
+        top: 50%;
+        transform: translate(0, -50%) rotate(90deg);
+      }
+}
+.caresend-accordion__question.active {
+    color: #fff;
+    background: #007FC6;
+    border-radius: 10px 10px 0 0;
+
+    &:after {
+        display: none;
+    }
+    & span {
+        color: #007FC6;
+        background: #fff;
+    }
+    & .caresend-accordion__sentense{
+        color: #fff;
+    }
+}
+.caresend-accordion__sentense {
+    color: #333;
+}
+
+@media screen and (max-width: 576px) {
+    .caresend-accordion__sentense {
+        @include vs(max-width, 375px, 260px, 576px, 404px, 'vw');
+        padding-right: 1em;
+        @include max(md) {
+            padding-right: 0;
+        }
+        line-height: 1.5;
+    } 
+}
+
+
+.caresend-accordion__answer {
+    display: none;
+    padding: 24px 36px;
+    font-weight: 400;
+    line-height: 1.8;
+    font-size: 16px;
+    background: #fff;
+    border-radius: 10px;
+    @include max(md) {
+        font-size: 14px;
+    }
+}
+.caresend-accordion__answer div {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+
+
+   
+    

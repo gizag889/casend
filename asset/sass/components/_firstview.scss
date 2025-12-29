@@ -1,0 +1,521 @@
+@charset "UTF-8";
+
+@use "../core/variables";
+
+@use "../core/mixins/mixin";
+@use "../core/mediaQuery" as *;
+@use "../core/mixins/viewportscale" as *;
+
+
+
+.fv {
+    display: flex;
+    justify-content: center;
+   
+    padding-left: 25px;
+    @include max(exlg) {
+        padding-left: 0;
+    }
+    background: linear-gradient(to bottom right, #007FC6, #02D1FF);
+    @include vs(padding-top, 375px, 40px, 1536px, 84px, 'vw');
+}
+.fv__inner {
+    display: flex;
+    justify-content: center;
+   
+    // @include max(exlg) {
+    //     justify-content: space-between;
+    // }
+    @media screen and (max-width: 1250px) {
+        justify-content: space-between;
+    }
+  
+    @include max(md) {
+        flex-direction: column;
+        width:100%;
+        // padding-bottom: 26px;
+    }
+    padding-bottom:  90px;
+    @include max (exlg) {
+        padding-bottom: 60px;
+    }
+    @include max (exsm) {
+        padding-bottom: 26px;
+    }
+    // @media screen and (max-width: 1100px) {
+    //     padding-bottom: 30px;
+    // }
+
+    // @include max(md){
+    //     @include vs(padding-bottom, 375px, 20px, 768px, 40px, 'vw');
+    // }
+}
+.fv-copy {
+    text-align: left;
+    margin-right: 161px;
+    @media screen and (max-width: 1220px) {
+        margin-right: 120px;
+    }
+    @media screen and (max-width: 1140px) {
+        margin-right: 80px;
+    }
+    @media screen and (max-width: 1100px) {
+        margin-right: 0px;
+        padding-right: 20px;
+    }
+    color: variables.$primary-color--white;
+    line-height: 1.5;
+    @include max(md) {
+        margin: 0 auto;
+        text-align: center;
+        padding-right: 0;
+    }
+    // @include vs(margin-right, 768px, 0px, 1200px, 161px, 'vw');
+    position: relative;
+
+}
+.fv-copy__main::before {
+    content: "＼最短一週間で人手不足が解消できる!!／";
+    display: block;
+    @include vs(font-size, 375px, 14px, 1356px, 20px, 'vw');
+
+    font-weight: 400;
+    @include max(exsm) {
+        margin-bottom: 12px;
+    }
+}
+.fv-copy__main {
+    font-size: 56px;
+    @include vs(font-size, 768px, 30px, 1230px, 56px, 'vw');
+    @include max(md) {
+        @include vs(font-size, 375px, 24px, 768px, 30px, 'vw');
+       
+    }
+
+
+    font-weight: 700;
+    line-height: 1.5; 
+    @include max(exsm){
+        line-height: 1.8;
+    }
+}
+
+.fv-copy__sub {
+    padding-top: 15px;
+    @include max(exsm) {
+        padding-top: 27px;
+        line-height: 1.8;
+    }
+    @include max(sm) {
+        padding-bottom: 18px;
+    }
+    @include vs(font-size, 375px, 14px, 1200px, 20px, 'vw');
+    font-weight: 400;
+    line-height: 1.5;
+}
+.fv-copy__sub .pc-br {
+    @media screen and (max-width: 1040px){
+        display: none;
+    }
+    @include max(md) {
+        display: block;
+    }
+}
+.fv-copy__sub .tb-br {
+    display: none;
+    @media screen and (max-width: 1040px) {
+        display: block;
+    }
+    @include max(md) {
+        display: none;
+    }
+}
+.fv-copy__sub .sp-br {
+    display: none;
+    @include max(md) {
+        display: block;
+    }
+}
+
+
+// 円形文字-------------------------------------------------------------
+.fv-circles {
+    padding-top: 40px;
+    @include max(lg) {
+        padding-top: 16px;
+    }
+    @include max(exsm) {
+        padding-top: 0;
+    }
+    display: flex;
+   
+    // margin: 0 auto;
+}
+.fv-circle {
+    display: inline-block;
+    // width: 164px;
+    // height: 164px;
+    @include vs(width, 768px, 100px, 1536px, 164px, 'vw');
+    @include vs(height, 768px, 100px, 1536px, 164px, 'vw'); 
+    @include max(exsm) {
+        width: 112px;
+        height: 112px;
+        margin:0;
+    }
+    border-radius: 50%;
+    background: #fff;
+    position: relative;
+    margin-right: 22px;
+    @include max(lg) {
+        margin-right: 10px;
+    }
+    @media screen and (max-width: 795px) {
+        margin-right: 4px;
+    }
+ 
+}
+.fv-circle:last-child {
+    margin-right: 0;
+}
+
+.fv-circle__texts{
+   
+    font-weight: 700;
+    line-height: 1.0;
+    color: #007FC6;
+    position: absolute;
+    display: inline-block;
+    top: 25%;
+    right: 0;
+    left: 0;
+    // width: 164px;
+    text-align:center;
+    // @include vs(width, 950px, 120px, 1536px, 164px, 'vw');
+    // @include max(md) {
+    //     // @include vs(width, 375px, 112px, 768px, px, 'vw');
+    //     width: 112px;
+    //     height: 112px;
+
+    // } 
+  
+    
+}
+.fv-circle__text-first {
+    @include vs(font-size, 768px, 16px, 1536px, 24px, 'vw');
+
+    top: 55%;
+    -webkit-transform: translateY(-10%);
+    transform: translateY(-10%);
+}
+.fv-circle__text-second {
+    -webkit-transform: translateY(-10%);
+    transform: translateY(-10%);
+    @include vs(font-size, 768px, 18px, 1536px, 32px, 'vw');
+    position: relative;
+    @include max(exsm) {
+        padding-right: 8px;
+    }
+}
+.fv-circle__text-second span {
+    font-size: 24px;
+    @include vs(font-size, 375px, 18px, 1536px, 24px, 'vw');
+}
+.fv-circle--first
+.fv-circle__text-second::after {
+    content: '*1';
+    position: absolute;
+    right: 6%;
+    @include max(exsm) {
+        right: 8%;
+    }
+    font-weight: 700;
+    vertical-align: middle;
+    color: #333333;
+    font-size: 12px;
+}
+.fv-circle--second
+.fv-circle__text-second::after {
+    content: '*2';
+    position: absolute;
+    right: -2;
+    font-weight: 700;
+    vertical-align: middle;
+    color: #333333;
+    font-size: 12px;
+}
+.fv-circle--third
+.fv-circle__text-second::after {
+    content: '*2';
+    position: absolute;
+    right: 18%;
+    @include max(exsm){
+        right: 20%;
+    }
+    font-weight: 700;
+    vertical-align: middle;
+    color: #333333;
+    font-size: 12px;
+}
+.fv-copy__bottom {
+    padding-top: 27px;
+    font-size: 12px;
+    font-weight: 400;
+    @include max(md) {
+        text-align: left;
+    } 
+    @include max(exsm){
+        padding-top: 18px;
+    }
+}
+
+.fv-copy__bottom-pic{
+    width: 320px;
+    @include max(exsm){
+        width: 305px;
+    }
+    height: 155px;
+    display: block;
+    position: absolute;
+  
+    right: 0;
+    margin-top: -50px;
+    @media screen and (max-width: 1100px) {
+        margin-top: 0;
+    }
+    @include max(lg) {
+        margin-top: 30px;
+    }
+    @include max(exsm){
+        margin-top: 15px;
+    }
+    margin-right: -120px;
+    @include max(exlg) {
+        margin-right: -60px;
+    }
+   
+  @media screen and (max-width: 1100px){
+    margin-right: 20px;
+  }
+  @include max(md) {
+    margin-right: -20px;
+  }
+  @include max(exsm) {
+    margin-right: 20px;
+  }
+
+}
+
+.fv-copy__bottom-pic img{    
+    height: auto;
+    width: 100%; 
+  
+}
+
+//フォーム
+.end-message {
+    display: none;
+    padding-top: 20px;
+    text-align: center;
+    color: #007FC6;
+
+  }
+  
+  .false-message {
+    display: none;
+  }
+  .box {
+    margin: 15px;
+  }
+  form {
+    border-radius: 5px;
+  }
+#form,
+#form2 {
+    @include vs(width, 900px, 343px, 1536px, 400px, 'vw');
+    background: variables.$primary-color--white;
+    // margin-left: 161px;
+    @include max(md) {
+        // @include vs(width, 375px, 139px, 768px, 227px, 'vw');
+
+    }
+}
+.fv #form {
+    margin-top: -5px;
+
+    // @media screen and (max-width:1220px) {
+    //     // @include vs(margin-left, 768px, 0px, 1220px, 101px);
+    //     @media screen and (max-width: 1220px) {
+    //      margin-left: 0;  
+    //     }
+    // }
+    @media screen and (max-width:860px) {
+        margin-inline: auto;
+        // width: 310px;
+        @include max(md) {
+            margin-top: 230px;
+
+        }
+    }
+    @include max(exsm){
+        width: 100%;
+    }
+ 
+}
+
+
+
+.caresend-form__title {
+    margin: 8px 8px 0; 
+    font-size: 20px;
+    @include vs(font-size, 375px, 16px, 1536px, 20px);
+    font-weight: 700;
+    line-height: 1.0;
+
+
+    line-height: 1.0;
+    background: variables.$primary-color--blue;
+    color: variables.$primary-color--white;
+    padding: 16px 0px;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+}
+
+
+// タイトルの三角形
+.caresend-form__title:after {
+    width: 0; 
+    right: 0;
+    left: 0;
+    bottom: -13px;
+    margin: auto;
+    // border-style: solid;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-top: 14px solid variables.$primary-color--blue;
+    // border-bottom: 0;
+    position: absolute;
+    content: "";
+}
+.caresend-form__title .tb-br {
+    display: none;
+    @include max(sm) {
+        display: block;
+    }
+}
+.caresend-form__inner {
+    color: #333;
+    padding: 8px 16px 28px;
+    text-align: center;
+    @include max(exsm) {
+        padding: 8px 8px 20px;
+    }
+}
+.caresend-form__item {
+    
+}
+.caresend-form__layout--2colum {
+    display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 18px;
+    // display: flex;
+    // justify-content: space-between;
+    color: #AAAAAA;
+}
+
+.caresend-form__item-name {
+    padding-top: 15px;
+    @include max(exsm) {
+        padding-top: 18px;
+    }
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.0;
+    text-align: left;
+    color: #333333;
+    // padding-bottom: 8px;
+}
+.caresend-form__item-name span {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.0;
+    color: #F90000;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid #CED4DA;
+    background: #F5F8FA;
+    border-radius: 5px;
+    font-weight: 400;
+    padding: 12px 8px;
+    
+    text-align: left;
+}
+
+.caresend-form__input {
+    display: inline-block;
+    margin-top: 8px;
+    color: #333333;
+    width: 100%;
+}
+.caresend-form__input::placeholder {
+    color: #AAAAAA;
+    font-size: 16px;
+    font-weight: normal;
+}
+.caresend-form__bottom-sentense {
+    display: inline-block;
+    text-align: left;
+    padding-top: 24px;
+    @include max(exsm) {
+        padding-top: 14px;
+    }
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #333333;
+}
+
+.caresend-form__btn-wrapper {
+}
+
+form .rounded-btn{
+    display: inline-block;
+    @include mixin.rounded-btn;
+    @media screen and (max-width:860px) {
+        @include vs(width, 375px, 246px, 860px, 280px, 'vw');
+
+    }
+    margin-top: 31px;
+  
+    width: 320px;
+    background: #007FC6;
+    color: #fff;
+
+}
+.rounded-btn__text {
+    @include vs(font-size, 375px, 16px, 1536px, 20px, 'vw');
+
+}
+.rounded-btn.rounded-btn--blue {
+    margin-top: 31px;
+    @include max (exsm) {
+        margin-top: 34px;
+    }
+  
+}
+// #js-submit {
+//     color: #02D1FF;
+// }
+#js-submit:disabled,
+#js-submit2:disabled {
+    opacity: 0.6;
+}
+
